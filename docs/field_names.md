@@ -8,7 +8,7 @@
 | desig         | Designation                   |
 | phone         | Phone Number                  |
 | email         | Email                         |
-| rented        | Whether Rented on Not         |
+| rented        | Whether Rented or Not         |
 | owner_name    | Name of Owner                 |
 | owner_phone   | Phone number of Owner         |
 | owner_email   | Email of Owner                |

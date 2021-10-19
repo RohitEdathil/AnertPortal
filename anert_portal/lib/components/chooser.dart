@@ -57,7 +57,7 @@ class _DataChooserState extends State<DataChooser> {
             duration: const Duration(milliseconds: 300),
             curve: Curves.easeOutCubic,
             tween: Tween<double>(
-                begin: selected.toDouble(), end: selected == 0 ? 1.0 : 0.0),
+                end: selected.toDouble(), begin: selected == 0 ? 1.0 : 0.0),
             builder: (context, val, child) {
               return Row(
                 mainAxisSize: MainAxisSize.min,
@@ -66,7 +66,7 @@ class _DataChooserState extends State<DataChooser> {
                   Container(
                     decoration: BoxDecoration(
                       color: widget.foreground,
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(10),
                     ),
                     height: 200,
                     width: 200,
