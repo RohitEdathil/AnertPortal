@@ -1,3 +1,5 @@
+# Inspection
+
 | Database Key  | Display Name                  |
 | ------------- | ----------------------------- |
 | uid           | User ID                       |
@@ -31,5 +33,34 @@
 | img1          | Image URL 1                   |
 | img2          | Image URL 2                   |
 | img3          | Image URL 3                   |
+
+---
+
+# EvData
+
+| Database Key  | Display Name                                                             |
+| ------------- | ------------------------------------------------------------------------ |
+| uid           | User ID                                                                  |
+| building_name | Name of Building                                                         |
+| suitable      | Suitable or Not                                                          |
+| category      | Category                                                                 |
+| contact_name  | Name of Contact                                                          |
+| desig         | Designation                                                              |
+| phone         | Phone Number                                                             |
+| email         | Email                                                                    |
+| rented        | Whether Rented or Not                                                    |
+| owner_name    | Name of Owner                                                            |
+| owner_phone   | Phone number of Owner                                                    |
+| owner_email   | Email of Owner                                                           |
+| owner_address | Address of Owner                                                         |
+| ward_num      | Ward Number                                                              |
+| ward_name     | Ward Name                                                                |
+| provision     | Whether there is a provision for charging two vehicles at a time or not? |
+| Remarks       | Remarks                                                                  |
+| intrst        | Interested                                                               |
+| gps           | GPS Link                                                                 |
+| img1          | Image URL 1                                                              |
+| img2          | Image URL 2                                                              |
+| img3          | Image URL 3                                                              |
 
 ---
