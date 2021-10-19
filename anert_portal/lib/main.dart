@@ -4,11 +4,11 @@ import 'package:firebase/firebase.dart';
 
 void main() async {
   initializeApp(
-    apiKey: "AIzaSyCDqi9gZh8LkllsKWGTXJcsGAu2r8ej1Ro",
-    authDomain: "anert-1433f.firebaseapp.com",
-    databaseURL: "https://anert-1433f-default-rtdb.firebaseio.com",
-    projectId: "anert-1433f",
-    storageBucket: "anert-1433f.appspot.com",
+    apiKey: "AIzaSyAfSaGED7Pt4WZIj07UezcssdSmdzJqSCA",
+    authDomain: "anert-f0be6.firebaseapp.com",
+    databaseURL: "https://anert-f0be6-default-rtdb.firebaseio.com",
+    projectId: "anert-f0be6",
+    storageBucket: "anert-f0be6.appspot.com",
   );
   runApp(const AnertExporter());
 }
