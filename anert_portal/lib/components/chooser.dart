@@ -47,8 +47,8 @@ class _DataChooserState extends State<DataChooser> {
                     name: "EV Site"),
                 ChoiceBG(
                     fg: widget.foreground,
-                    icon: Icons.search,
-                    name: "Inspection")
+                    icon: Icons.brightness_7,
+                    name: "Solar")
               ],
             ),
           ),
@@ -84,8 +84,8 @@ class _DataChooserState extends State<DataChooser> {
                           opacity: val,
                           child: ChoiceBG(
                             fg: widget.background,
-                            icon: Icons.search,
-                            name: "Inspection",
+                            icon: Icons.brightness_7,
+                            name: "Solar",
                           ),
                         ),
                       ],
