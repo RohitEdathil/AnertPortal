@@ -1,4 +1,4 @@
-import 'package:anert_portal/ui.dart';
+import 'package:anert_portal/login.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase/firebase.dart';
 
@@ -10,5 +10,8 @@ void main() async {
     projectId: "anert-f0be6",
     storageBucket: "anert-f0be6.appspot.com",
   );
-  runApp(const AnertExporter());
+  runApp(const MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: AuthLayer(),
+  ));
 }

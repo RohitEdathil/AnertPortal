@@ -3,6 +3,7 @@ import 'dart:html';
 
 import 'package:anert_portal/components/chooser.dart';
 import 'package:anert_portal/data/generator.dart';
+import 'package:firebase/firebase.dart';
 import 'package:flutter/material.dart';
 
 final bg1 = Colors.grey[900];
@@ -14,13 +15,18 @@ class AnertExporter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: bg1,
-        body: const Center(
-          child: ExportControls(),
+    return Scaffold(
+      backgroundColor: bg1,
+      floatingActionButton: FloatingActionButton(
+        onPressed: auth().signOut,
+        child: Icon(
+          Icons.power_settings_new_rounded,
+          color: fg,
         ),
+        backgroundColor: bg1,
+      ),
+      body: const Center(
+        child: ExportControls(),
       ),
     );
   }
