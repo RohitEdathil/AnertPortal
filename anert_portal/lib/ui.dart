@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 final bg1 = Colors.grey[900];
 final bg2 = Colors.grey[850];
 final fg = Colors.blue;
+final fg2 = Colors.blue[100];
 
 class AnertExporter extends StatelessWidget {
   const AnertExporter({Key? key}) : super(key: key);

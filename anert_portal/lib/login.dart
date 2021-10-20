@@ -5,6 +5,7 @@ import 'package:firebase/firebase.dart';
 final authInputDecoration = InputDecoration(
   border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
   focusColor: fg,
+  labelStyle: TextStyle(color: fg2),
 );
 
 class AuthLayer extends StatefulWidget {
@@ -71,22 +72,34 @@ class _LoginViewState extends State<LoginView> {
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10),
-                child: Text(
-                  "Login",
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline3
-                      ?.copyWith(color: fg),
-                  textAlign: TextAlign.start,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Login",
+                      style: Theme.of(context)
+                          .textTheme
+                          .headline3
+                          ?.copyWith(color: fg),
+                      textAlign: TextAlign.start,
+                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Image.asset("anert.png"),
+                      height: 90,
+                      width: 90,
+                    )
+                  ],
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8),
                 child: TextField(
                   controller: _emailController,
+                  style: TextStyle(color: fg2),
                   decoration: authInputDecoration.copyWith(
                       label: const Text("E-mail"),
-                      prefixIcon: const Icon(Icons.email)),
+                      prefixIcon: Icon(Icons.email, color: fg2)),
                 ),
               ),
               Padding(
@@ -94,9 +107,10 @@ class _LoginViewState extends State<LoginView> {
                 child: TextField(
                     controller: _passwordController,
                     obscureText: true,
+                    style: TextStyle(color: fg2),
                     decoration: authInputDecoration.copyWith(
                       label: const Text("Password"),
-                      prefixIcon: const Icon(Icons.lock),
+                      prefixIcon: Icon(Icons.lock, color: fg2),
                     )),
               ),
               Padding(
