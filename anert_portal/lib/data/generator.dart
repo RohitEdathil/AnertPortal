@@ -29,7 +29,15 @@ Future<List<int>?> generator(String dataset) async {
         row.add(rowData.child(element).val());
       }
     }
-    sheet.appendRow(row);
+    List replaced = [];
+    for (var ele in row) {
+      if (replacements.containsKey(ele)) {
+        replaced.add(replacements[ele]);
+      } else {
+        replaced.add(ele);
+      }
+    }
+    sheet.appendRow(replaced);
   });
 
   return excel.encode();

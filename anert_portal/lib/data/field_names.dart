@@ -66,3 +66,17 @@ const evData = {
   "img2": "Image URL 2",
   "img3": "Image URL 3",
 };
+
+const replacements = {
+  "do_not_know": "Don't Know",
+  "not_interested": "Not Interested",
+  "info_obtained_not_useful": "Info obtained not useful",
+  "info_not_obtained": "Info not obtained",
+  "do_not_know_whom_to_approach": "Don't Know whom to approach",
+  "no_ROI": "No ROI",
+  "lack_of_info": "Lack of info",
+  "never_heard_of_solar": "Never heard of solar",
+  "no_apt_space": "No apt space",
+  "bad_reviews": "Bad reviews",
+  "nil": ""
+};
