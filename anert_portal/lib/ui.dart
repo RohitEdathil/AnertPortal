@@ -65,7 +65,7 @@ class _ExportControlsState extends State<ExportControls> {
       AnchorElement(
           href:
               "data:application/octet-stream;charset=utf-16le;base64,$content")
-        ..setAttribute("download", "Exported.xlsl")
+        ..setAttribute("download", "Exported.xlsx")
         ..click();
     }
   }

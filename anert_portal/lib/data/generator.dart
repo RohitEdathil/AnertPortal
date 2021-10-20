@@ -1,10 +1,8 @@
-import 'dart:html';
-
 import 'package:anert_portal/data/field_names.dart';
 import 'package:firebase/firebase.dart';
 import 'package:excel/excel.dart';
 
-Future<List<int>> generator(
+Future<List<int>?> generator(
     String dataset, void Function(double) progress) async {
   // Queries data
   final db = database();
@@ -20,14 +18,23 @@ Future<List<int>> generator(
   sheet.appendRow(dataScheme.values.toList());
   int count = 0;
   data.forEach((rowData) {
-    var row = [];
-    for (var element in dataScheme.keys) {
-      row.add(rowData.child(element));
+    List row;
+    if (rowData.child("suitable").val() == "no") {
+      row = [
+        rowData.child("uid").val(),
+        rowData.child("building_name").val(),
+        "No"
+      ];
+    } else {
+      row = [];
+      for (var element in dataScheme.keys) {
+        row.add(rowData.child(element).val());
+      }
     }
     count++;
     progress(count * 100 / rowData.numChildren());
     sheet.appendRow(row);
   });
 
-  return await excel.encode();
+  return excel.encode();
 }
