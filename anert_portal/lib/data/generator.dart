@@ -2,8 +2,7 @@ import 'package:anert_portal/data/field_names.dart';
 import 'package:firebase/firebase.dart';
 import 'package:excel/excel.dart';
 
-Future<List<int>?> generator(
-    String dataset, void Function(double) progress) async {
+Future<List<int>?> generator(String dataset) async {
   // Queries data
   final db = database();
   final ref = db.ref(dataset);
@@ -12,11 +11,10 @@ Future<List<int>?> generator(
   // Prepares .xlsl
   final excel = Excel.createExcel();
   final sheet = excel['Sheet1'];
-  final dataScheme = dataset == "EvData" ? evData : inspectionData;
+  final dataScheme = dataset == "EvSite" ? evData : inspectionData;
 
   // Writes Data
   sheet.appendRow(dataScheme.values.toList());
-  int count = 0;
   data.forEach((rowData) {
     List row;
     if (rowData.child("suitable").val() == "no") {
@@ -31,8 +29,6 @@ Future<List<int>?> generator(
         row.add(rowData.child(element).val());
       }
     }
-    count++;
-    progress(count * 100 / rowData.numChildren());
     sheet.appendRow(row);
   });
 

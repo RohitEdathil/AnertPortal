@@ -42,15 +42,11 @@ class ExportControls extends StatefulWidget {
 class _ExportControlsState extends State<ExportControls> {
   Data selected = Data.ev;
   Status status = Status.choosing;
-  double per = 0;
   List<int>? file;
   void _setChoice(int n) {
     selected = n == 0 ? Data.ev : Data.inspection;
-  }
-
-  void _progress(double n) {
     setState(() {
-      per = n;
+      status = Status.choosing;
     });
   }
 
@@ -59,8 +55,7 @@ class _ExportControlsState extends State<ExportControls> {
       setState(() {
         status = Status.generating;
       });
-      generator(selected == Data.ev ? "EvSite" : "Inspection", _progress)
-          .then((value) {
+      generator(selected == Data.ev ? "EvSite" : "Inspection").then((value) {
         setState(() {
           status = Status.ready;
         });
@@ -71,7 +66,8 @@ class _ExportControlsState extends State<ExportControls> {
       AnchorElement(
           href:
               "data:application/octet-stream;charset=utf-16le;base64,$content")
-        ..setAttribute("download", "Exported.xlsx")
+        ..setAttribute(
+            "download", "${selected == Data.ev ? "EvSite" : "Inspection"}.xlsx")
         ..click();
     }
   }
@@ -89,7 +85,7 @@ class _ExportControlsState extends State<ExportControls> {
           mainAxisSize: MainAxisSize.min,
           children: [
             DataChooser(foreground: fg, background: bg2!, callback: _setChoice),
-            GenerateButton(callback: _handle, status: status, per: per),
+            GenerateButton(callback: _handle, status: status),
           ],
         ),
       ),
@@ -100,13 +96,11 @@ class _ExportControlsState extends State<ExportControls> {
 class GenerateButton extends StatefulWidget {
   final void Function() callback;
   final Status status;
-  final double per;
-  const GenerateButton(
-      {Key? key,
-      required this.callback,
-      required this.status,
-      required this.per})
-      : super(key: key);
+  const GenerateButton({
+    Key? key,
+    required this.callback,
+    required this.status,
+  }) : super(key: key);
 
   @override
   _GenerateButtonState createState() => _GenerateButtonState();
@@ -128,7 +122,7 @@ class _GenerateButtonState extends State<GenerateButton> {
                 ? "Generate"
                 : widget.status == Status.ready
                     ? "Download"
-                    : "${widget.per.toInt().toString()}%",
+                    : "...",
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.headline5!.copyWith(color: bg1),
           )),
