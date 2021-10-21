@@ -62,6 +62,10 @@
 | owner_phone   | Phone number of Owner                                                    |
 | owner_email   | Email of Owner                                                           |
 | owner_address | Address of Owner                                                         |
+| ambly_const   | Assembly Constituency                                                    |
+| parli_const   | Parliament Constituency                                                  |
+| dist          | District                                                                 |
+| lb            | Local Body                                                               |
 | ward_num      | Ward Number                                                              |
 | ward_name     | Ward Name                                                                |
 | provision     | Whether there is a provision for charging two vehicles at a time or not? |
