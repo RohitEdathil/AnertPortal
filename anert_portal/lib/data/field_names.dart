@@ -32,6 +32,7 @@ const inspectionData = {
   "rf_mat": "Roof Material",
   "mat_acc": "Accessibility of Materials",
   "sub_know": "Knowledge of Availability of subsidy",
+  "promocode": "Promocode",
   "remarks": "Remarks",
   "intrst": "Interested",
   "reason": "Reason for being not interested in solar installation",
@@ -64,7 +65,6 @@ const evData = {
   "provision":
       "Whether there is a provision for charging two vehicles at a time or not?",
   "Remarks": "Remarks",
-  "intrst": "Interested",
   "gps": "GPS Link",
   "img1": "Image URL 1",
   "img2": "Image URL 2",

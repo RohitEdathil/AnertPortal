@@ -35,6 +35,7 @@
 | rf_mat        | Roof Covering Material                                |
 | mat_acc       | Accessibility of Materials                            |
 | sub_know      | Knowledge of availability of subsidy                  |
+| promocode     | Promocode                                             |
 | reason        | Reason for being not interested in solar installation |
 | remarks       | Remarks                                               |
 | intrst        | Interested                                            |
@@ -70,7 +71,6 @@
 | ward_name     | Ward Name                                                                |
 | provision     | Whether there is a provision for charging two vehicles at a time or not? |
 | Remarks       | Remarks                                                                  |
-| intrst        | Interested                                                               |
 | gps           | GPS Link                                                                 |
 | img1          | Image URL 1                                                              |
 | img2          | Image URL 2                                                              |
