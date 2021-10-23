@@ -83,11 +83,10 @@ class _LoginViewState extends State<LoginView> {
                           ?.copyWith(color: fg),
                       textAlign: TextAlign.start,
                     ),
-                    Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 20),
+                    SizedBox(
                       child: Image.asset("anert.png"),
-                      height: 90,
-                      width: 90,
+                      height: 150,
+                      width: 150,
                     )
                   ],
                 ),
