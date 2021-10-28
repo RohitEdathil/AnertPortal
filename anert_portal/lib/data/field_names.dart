@@ -82,5 +82,16 @@ const replacements = {
   "never_heard_of_solar": "Never heard of solar",
   "no_apt_space": "No apt space",
   "bad_reviews": "Bad reviews",
-  "nil": ""
+  "nil": "",
+  "no": "No",
 };
+
+const fieldsInNo = [
+  'suitable',
+  'building_name',
+  'uid',
+  'gps',
+  'img1',
+  'img2',
+  'img3'
+];
