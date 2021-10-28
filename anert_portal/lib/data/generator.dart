@@ -8,35 +8,27 @@ Future<List<int>?> generator(String dataset) async {
   final ref = db.ref(dataset);
   final data = (await ref.once('value')).snapshot;
 
-  // Prepares .xlsx
+  // Prepares .xlsl
   final excel = Excel.createExcel();
   final sheet = excel['Sheet1'];
   final dataScheme = dataset == "EvSite" ? evData : inspectionData;
 
-  // Writes row headers
+  // Writes Data
   sheet.appendRow(dataScheme.values.toList());
-
-  // Prepares row data
   data.forEach((rowData) {
-    List row = [];
-    // Checks if suitable
+    List row;
     if (rowData.child("suitable").val() == "no") {
-      // Adds only allowed fields
-      for (var element in dataScheme.keys) {
-        if (fieldsInNo.contains(element)) {
-          row.add(rowData.child(element).val());
-        } else {
-          row.add("");
-        }
-      }
+      row = [
+        rowData.child("uid").val(),
+        rowData.child("building_name").val(),
+        "No"
+      ];
     } else {
-      // Adds every fields
+      row = [];
       for (var element in dataScheme.keys) {
         row.add(rowData.child(element).val());
       }
     }
-
-    // Replaces strings mentioned in replacements
     List replaced = [];
     for (var ele in row) {
       if (replacements.containsKey(ele)) {
@@ -45,8 +37,6 @@ Future<List<int>?> generator(String dataset) async {
         replaced.add(ele);
       }
     }
-
-    // Writes row to file
     sheet.appendRow(replaced);
   });
 
