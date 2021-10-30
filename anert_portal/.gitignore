@@ -31,8 +31,6 @@
 .pub/
 # ignores everything except build/web in build
 !/build   
-/build/*
-!/build/web
 # Web related
 lib/generated_plugin_registrant.dart
 

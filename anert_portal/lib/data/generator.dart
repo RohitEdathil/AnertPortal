@@ -16,15 +16,16 @@ Future<List<int>?> generator(String dataset) async {
   // Writes Data
   sheet.appendRow(dataScheme.values.toList());
   data.forEach((rowData) {
-    List row;
+    List row = [];
     if (rowData.child("suitable").val() == "no") {
-      row = [
-        rowData.child("uid").val(),
-        rowData.child("building_name").val(),
-        "No"
-      ];
+      for (var element in dataScheme.keys) {
+        if (fieldsInNo.contains(element)) {
+          row.add(rowData.child(element).val());
+        } else {
+          row.add("");
+        }
+      }
     } else {
-      row = [];
       for (var element in dataScheme.keys) {
         row.add(rowData.child(element).val());
       }
