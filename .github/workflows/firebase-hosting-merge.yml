@@ -14,9 +14,12 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           flutter-version: "2.5.3"
-      - run: cd ./anert_portal
-      - run: flutter pub get
-      - run: flutter build web
+      - name: Get Packages
+        working-directory: ./anert_portal
+        run: flutter pub get
+      - name: Build Project
+        working-directory: ./anert_portal
+        run: flutter build web
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
